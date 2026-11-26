@@ -346,7 +346,7 @@ Create a centralized Axios configuration file and separate API service files for
 - workoutPlanService.js
 - exerciseService.js
 
-The frontend must use the actual backend API responses. Do not use hardcoded or mock data once the backend APIs are integrated.
+The frontend uses actual backend API responses by default. Optional in-memory mock data is available only for UI development and can be enabled with `VITE_USE_MOCK_DATA=true`.
 
 Both developers should agree on request DTOs, response DTOs, JSON field names, date formats and error response structures before integration.
 
@@ -380,3 +380,14 @@ The main objective is to build a complete CRUD-based full-stack application that
 - Search, sorting and filtering
 
 JWT authentication and role-based access can be added as a later enhancement after the core application is completed.
+
+## 9. Run the Frontend
+
+The React application is in the [`Frontend/`](./Frontend/) directory. From that directory, install dependencies and start the Vite development server:
+
+```bash
+npm install
+npm run dev
+```
+
+By default, the app connects to `http://localhost:8080`. Copy `.env.example` to `.env` to override `VITE_API_BASE_URL` or enable sample in-memory data for UI development with `VITE_USE_MOCK_DATA=true`.
